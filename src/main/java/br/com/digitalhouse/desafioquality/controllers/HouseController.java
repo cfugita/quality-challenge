@@ -15,9 +15,7 @@ public class HouseController {
 
     private HouseService houseService;
 
-    public HouseController(HouseService houseService) {
-        this.houseService = houseService;
-    }
+    public HouseController(HouseService houseService) { this.houseService = houseService; }
 
     @GetMapping("/area/total")
     ResponseEntity<Object> getTotalArea (@RequestBody HouseRequest houseRequest) {
@@ -30,12 +28,13 @@ public class HouseController {
     }
 
     @GetMapping("/area/rooms")
-    ResponseEntity<Object> getRoomArea (@RequestBody HouseRequest houseRequest) {
-        return new ResponseEntity<>(this.houseService.getRoomArea(houseRequest), HttpStatus.OK);
+    ResponseEntity<Object> getAreaByRoom (@RequestBody HouseRequest houseRequest) {
+        return new ResponseEntity<>(this.houseService.getAreaByRoom(houseRequest), HttpStatus.OK);
     }
 
+
     @GetMapping("/area/largest")
-    ResponseEntity<Object> getBiggestRoom (@RequestBody HouseRequest houseRequest) {
+    ResponseEntity<Object> getLargestRoom (@RequestBody HouseRequest houseRequest) {
         return new ResponseEntity<>(this.houseService.getLargestRoom(houseRequest), HttpStatus.OK);
     }
 

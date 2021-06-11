@@ -1,6 +1,7 @@
 package br.com.digitalhouse.desafioquality.repository;
 
 import br.com.digitalhouse.desafioquality.repository.entity.DistrictData;
+import br.com.digitalhouse.desafioquality.service.exceptions.NotFoundException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.util.ResourceUtils;
@@ -19,13 +20,11 @@ public interface DistrictRepository {
 
             ObjectMapper objectMapper = new ObjectMapper();
             TypeReference<List<DistrictData>> typeRef = new TypeReference<List<DistrictData>>() {};
-            List<DistrictData> districtFile = null;
-
-            districtFile = objectMapper.readValue(file,typeRef);
+            List<DistrictData> districtFile = objectMapper.readValue(file,typeRef);
 
             List<DistrictData> districts = districtFile.stream().filter(d -> d.getName().equals(districtName)).collect(Collectors.toList());
 
-            if(districts.isEmpty()) { throw new IllegalArgumentException();}
+            if(districts.isEmpty()) { throw new NotFoundException("Nome do bairro não encontrado.");}
 
             return districts.stream().findFirst().get();
 

@@ -9,6 +9,6 @@ import br.com.digitalhouse.desafioquality.dto.response.HouseAreaResponse;
 public interface HouseService {
     HouseAreaResponse getTotalArea (HouseRequest houseRequest);
     LargestRoomResponse getLargestRoom(HouseRequest houseRequest);
-    AllRoomsAreasResponse getRoomArea (HouseRequest houseRequest);
+    AllRoomsAreasResponse getAreaByRoom (HouseRequest houseRequest);
     HouseValueResponse getHouseValue (HouseRequest houseRequest);
 }
