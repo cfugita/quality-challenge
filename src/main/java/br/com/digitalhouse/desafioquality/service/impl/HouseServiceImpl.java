@@ -16,6 +16,9 @@ import java.util.List;
 @Service
 public class HouseServiceImpl implements HouseService {
 
+    public HouseServiceImpl() {
+    }
+
     @Override
     public HouseAreaResponse getTotalArea (HouseRequest houseRequest) {
         Boolean isValid = ValidationRequest.validateHouseRequest(houseRequest);

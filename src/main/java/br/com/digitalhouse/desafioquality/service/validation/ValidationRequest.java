@@ -23,12 +23,12 @@ public class ValidationRequest {
     public static void validateName (String name, String fieldName, Integer maxLength) {
         if(name.isEmpty()) { throw new ValidationException("O " + fieldName + " não pode estar vazio."); }
         if(name.length() > maxLength) { throw new ValidationException("O " + fieldName + " não pode exceder " + maxLength + " caracteres." ); }
-        if(!Character.isUpperCase(name.charAt(0))) { throw new ValidationException("O " + fieldName + " deve começar com uma letra maiúscula" ); }
+        if(!Character.isUpperCase(name.charAt(0))) { throw new ValidationException("O " + fieldName + " deve começar com uma letra maiúscula." ); }
     }
 
     public static void validateMeasure (double measure, String measureName, Integer max) {
         if(measure == 0) { throw new ValidationException("A medida de " + measureName + " do cômodo não pode estar vazia."); }
-        if(measure > max) { throw new ValidationException("A medida de " + measureName + " não pode exceder " + max + " metros." ); }
+        if(measure > max) { throw new ValidationException("A medida de " + measureName + " não pode exceder " + max + " metros."); }
     }
 
     public static void validateListRooms (List<RoomRequest> rooms) {
