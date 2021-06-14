@@ -22,5 +22,37 @@
   {
     "name": "Água Branca",
     "value": 8550
+  },
+  {
+    "name": "Vila Olímpia",
+    "value": 12310
+  },
+  {
+    "name": "Itaim Bibi",
+    "value": 11570
+  },
+  {
+    "name": "Pinheiros",
+    "value": 11250
+  },
+  {
+    "name": "Vila Madalena",
+    "value": 11340
+  },
+  {
+    "name": "Moóca",
+    "value": 6860
+  },
+  {
+    "name": "Tatuapé",
+    "value": 6800
+  },
+  {
+    "name": "Santana",
+    "value": 6810
+  },
+  {
+    "name": "Parada Inglesa",
+    "value": 6790
   }
 ]
