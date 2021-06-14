@@ -117,14 +117,41 @@ public class ValidationTests {
     }
 
 
-//	@Test
-//	void shouldThrowExceptionNullRoomWidth() {
-//
-//		houseRequest.getRooms().get(0).setWidth(null);
-//
-//		Exception ex = Assertions.assertThrows(ValidationException.class, () -> ValidationRequest.validateHouseRequest(houseRequest));
-//		Assertions.assertEquals("O nome do cômodo não pode estar vazio.",ex.getMessage());
-//	}
+	@Test
+	void shouldThrowExceptionNullRoomWidth() {
+
+		houseRequest.getRooms().get(0).setWidth(null);
+
+		Exception ex = Assertions.assertThrows(ValidationException.class, () -> ValidationRequest.validateHouseRequest(houseRequest));
+		Assertions.assertEquals("A medida de largura do cômodo não pode estar vazia.",ex.getMessage());
+	}
+
+    @Test
+    void shouldThrowExceptionNegativeRoomLength() {
+
+        houseRequest.getRooms().get(0).setLength(-1.0);
+
+        Exception ex = Assertions.assertThrows(ValidationException.class, () -> ValidationRequest.validateHouseRequest(houseRequest));
+        Assertions.assertEquals("A medida de comprimento do cômodo não pode ser negativa.",ex.getMessage());
+    }
+
+    @Test
+    void shouldThrowExceptionNegativeRoomWidth() {
+
+        houseRequest.getRooms().get(0).setWidth(-1.0);
+
+        Exception ex = Assertions.assertThrows(ValidationException.class, () -> ValidationRequest.validateHouseRequest(houseRequest));
+        Assertions.assertEquals("A medida de largura do cômodo não pode ser negativa.",ex.getMessage());
+    }
+
+    @Test
+    void shouldThrowExceptionNullRoomLength() {
+
+        houseRequest.getRooms().get(0).setLength(null);
+
+        Exception ex = Assertions.assertThrows(ValidationException.class, () -> ValidationRequest.validateHouseRequest(houseRequest));
+        Assertions.assertEquals("A medida de comprimento do cômodo não pode estar vazia.",ex.getMessage());
+    }
 
     @Test
     void shouldThrowExceptionExceedRoomWidth() {

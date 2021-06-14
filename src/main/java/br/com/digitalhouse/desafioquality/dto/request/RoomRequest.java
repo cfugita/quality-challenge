@@ -2,8 +2,8 @@ package br.com.digitalhouse.desafioquality.dto.request;
 
 public class RoomRequest {
     private String roomName;
-    private double width;
-    private double length;
+    private Double width;
+    private Double length;
 
     public RoomRequest(String roomName, double width, double length) {
         this.roomName = roomName;
@@ -22,23 +22,23 @@ public class RoomRequest {
         this.roomName = roomName;
     }
 
-    public double getWidth() {
+    public Double getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    public void setWidth(Double width) {
         this.width = width;
     }
 
-    public double getLength() {
+    public Double getLength() {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(Double length) {
         this.length = length;
     }
 
-    public double getArea() {
+    public Double getArea() {
         return this.getLength() * this.getWidth();
     }
 }
