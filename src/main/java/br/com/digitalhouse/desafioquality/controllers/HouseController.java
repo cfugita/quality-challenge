@@ -32,7 +32,6 @@ public class HouseController {
         return new ResponseEntity<>(this.houseService.getAreaByRoom(houseRequest), HttpStatus.OK);
     }
 
-
     @GetMapping("/area/largest")
     ResponseEntity<Object> getLargestRoom (@RequestBody HouseRequest houseRequest) {
         return new ResponseEntity<>(this.houseService.getLargestRoom(houseRequest), HttpStatus.OK);

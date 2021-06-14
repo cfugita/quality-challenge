@@ -1,7 +1,5 @@
 package br.com.digitalhouse.desafioquality.dto.response;
 
-import java.util.Comparator;
-
 public class RoomAreaResponse {
     private String roomName;
     private double roomArea;
